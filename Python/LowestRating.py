@@ -1,21 +1,21 @@
 def main():
-    ls = []
-    minRate = 11
     n = int(input().strip())
+    name = []
+    rate = []
     for i in range(n):
-        name = input().strip()
-        rate = int(input().strip())
-        if minRate > rate:
-            if len(ls) == 0:
-                ls.append(name)
-            else:
-                ls.insert(len(ls) - 1, name)
-            minRate = rate
-        elif minRate == rate:
-            ls.append(name)
-        
-    ls.sort()
-    for i in range(len(ls)):
-        print(ls[i])
-        
+        name.append(input().strip())
+        rate.append(int(input().strip()))
+                                            
+    minRate = min(rate)
+                                                    
+    out = []
+    for i in range(len(rate)):
+    if rate[i] == minRate:
+        out.append(name[i])
+
+    out.sort()
+    for i in out:
+        print(i)
+    print(end='\n')
+
 main()
